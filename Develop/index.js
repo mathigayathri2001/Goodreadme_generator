@@ -45,10 +45,26 @@ const questions = [
     }
 
 ];
+// function writeToFile (fileName, data) {}
 
+function init () {
+    inquirer.
+    prompt(questions)
+    .then (function(answers) {
+        const username = answers.username
+        api.getUser(username)
+           .then(function(userData){
+              let url = userData.html_url
+              let image = userData.avatar_url
+               console.log(userData)
 
-function writeToFile (fileName, data) {}
+           })
+        
+        
+    })
+ 
+ 
 
-function init () {}
-
+}
 init()
+
