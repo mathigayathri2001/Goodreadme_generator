@@ -45,7 +45,19 @@ const questions = [
     }
 
 ];
-// function writeToFile (fileName, data) {}
+
+function writeToFile (fileName, readMeData) {
+
+    fs.writeFile(fileName, readMeData, function (err) {
+        if (err) {
+          console.log(err)
+        }
+      
+        console.log('Success!')
+      })
+      
+
+}
 
 function init () {
     inquirer.
@@ -57,6 +69,10 @@ function init () {
               let url = userData.html_url
               let image = userData.avatar_url
                console.log(userData)
+
+               const readmeData = markDown.generateMarkdown(answers,url,image)
+               writeToFile("GenerateReadme.md",readmeData)
+
 
            })
         
