@@ -32,15 +32,15 @@ const questions = [
 
     },
     {
-        type:"checkbox",
-         name: "License",
+        type:"list",
+         name: "license",
          message : "What type of licence required?",
-         choices : ['MIT','GPL 3.0','MPL-2.0']
+         choices : ["MIT","GPL-3.0","MPL-2.0"]
 
     },
     {
         type:"input",
-         name: "Test",
+         name: "test",
          message : "What is the require command for testing?"
 
     },
@@ -64,9 +64,8 @@ function writeToFile (fileName, readMeData) {
     fs.writeFile(fileName, readMeData, function (err) {
         if (err) {
           console.log(err)
-        }
-      
-        console.log('Success!')
+        }    
+        console.log('readme generated!')
       })
       
 
@@ -83,27 +82,20 @@ function init () {
               let image = userData.avatar_url
                console.log(userData)
 
-               if (answers.License === "MIT") {
+               if (answers.license==="MIT") {
                    link = "https://choosealicense.com/licenses/mit/"
                    
-               } else if (answers.License === "MPL-2.0"){
+               } else if (answers.license==="MPL-2.0"){
                 link = "https://choosealicense.com/licenses/mpl-2.0/"
-               } else if (answers.License === "GPL 3.0"){
+               } else if (answers.license==="GPL-3.0"){
                 link = "https://choosealicense.com/licenses/gpl-3.0/"
                }
-
-
-               const readmeData = markDown.generateMarkdown(answers,url,image)
+               console.log(link)
+               
+               const readmeData = markDown.generateMarkdown(answers,link,url,image)
                writeToFile("GenerateReadme.md",readmeData)
-
-
-           })
-        
-        
+           })       
     })
- 
- 
-
 }
 init()
 

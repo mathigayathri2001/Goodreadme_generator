@@ -1,18 +1,56 @@
-function generateMarkdown(answers,url,image) {
+function generateMarkdown(answers,link,url,image ){
   return  `
-  #ProjectTitle:
+  # Project Title:
+  ${answers.projecttitle}
 
-###  ${answers.projecttitle}
+  # Project description:
+  ${answers.description}
 
-# ${answers.description}
-# ${answers.installation}
-# ${answers.License}
-# ${answers.test}
+   # Table of Content
 
-# ${url}
+  * [Installation](#installation)
 
-# ${image}
+  * [License](#license) 
 
+  * [Usage](#usage)
+
+  * [test](#test) 
+
+  * [usercontribution](#usercontribution) 
+
+  * [question](#question) 
+  
+  
+## Installation
+To install dependancies for readme appication, please use the following command
+ ${answers.installation}
+
+ ## License
+ ![Badge](https://img.shields.io/static/v1?label=MIT&message=License&color=brightgreen)
+ ![Badge](https://img.shields.io/static/v1?label=GPL-3.0&message=License&color=blueviolet)
+ ![Badge](https://img.shields.io/static/v1?label=MPL-2.0&message=License&color=red)
+
+
+ ${answers.license}
+ License link:"${link}"
+  
+
+ ## Usage
+
+ ${answers.usage}
+
+ ## test
+ ${answers.test}
+
+## usercontribution
+ ${answers.usercontribution}
+
+ ## question
+ ${url}
+
+
+ <img src= "${image}"/>
+ 
 `
 }
 
