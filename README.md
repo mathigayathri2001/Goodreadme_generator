@@ -1,1 +1,2 @@
-# Goodreadme_generator
+# Readme Generator application will help the user to create a well structured Readme file with the all the required 
+# information to get the details about the project such as,  Project title, Project Descrtion,

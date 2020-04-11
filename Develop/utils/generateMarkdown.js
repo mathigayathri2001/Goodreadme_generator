@@ -1,67 +1,67 @@
-function generateMarkdown(answers,link,url,image ){
-  return  `
+/* generate the Markdown for the readme */
+function generateMarkdown(answers, link, url, image) {
+  return `
   # Project Title:
-  ${answers.projecttitle}
+
+  ![Badge](https://img.shields.io/static/v1?label=${answers.projecttitle}&message=projecttitle&color=success)
+  
+  ## *${answers.projecttitle}*
 
   # Project description:
-  ${answers.description}
+  ### This section describe the project detail.
 
-   # Table of Content
+  ## *${answers.description}*
+  
+  # Table of Content
 
-  * [Installation](#installation)
+  * ### **[Installation](#installation)**
 
-  * [License](#license) 
+  * ### **[License](#license)** 
 
-  * [Usage](#usage)
+  * ### **[Usage](#usage)**
 
-  * [test](#test) 
+  * ### **[Test](#test)**
 
-  * [usercontribution](#usercontribution) 
+  * ### **[Usercontribution](#usercontribution)**
 
-  * [question](#question) 
+  * ### **[Question](#question)** 
   
   
-## Installation
-To install dependancies for readme appication, please use the following command
- ${answers.installation}
+  # Installation
 
- ## License
- ![Badge](https://img.shields.io/static/v1?label=MIT&message=License&color=brightgreen)
- ![Badge](https://img.shields.io/static/v1?label=GPL-3.0&message=License&color=blueviolet)
- ![Badge](https://img.shields.io/static/v1?label=MPL-2.0&message=License&color=red)
+  ## To install dependancies for readme appication, please use the following command
+  ## *${answers.installation}*
 
+  # License
 
- ${answers.license}
- License link:"${link}"
+  ## LIcense require for the project
+  ![Badge](https://img.shields.io/static/v1?label=MIT&message=License&color=brightgreen)
+  ![Badge](https://img.shields.io/static/v1?label=GPL-3.0&message=License&color=blueviolet)
+  ![Badge](https://img.shields.io/static/v1?label=MPL-2.0&message=License&color=red)
+
+  ## *${answers.license}*
+  ## License link:"${link}"
   
+  # Usage
 
- ## Usage
+  ## *${answers.usage}*
 
- ${answers.usage}
+  # Test
 
- ## test
- ${answers.test}
+  ## *${answers.test}*
 
-## usercontribution
- ${answers.usercontribution}
+  # Usercontribution
 
- ## question
- ${url}
+  ## *${answers.usercontribution}*
 
+  # Question
 
- <img src= "${image}"/>
+  ${url}
+
+  <img src= "${image}"/>
  
 `
 }
 
+/* assign the generateMarkDown into the export module */
 module.exports = {generateMarkdown:generateMarkdown}
-
-
-// function generateMarkdown (data) {
-//   return `
-// # ${data.title}
-
-// `
-// }
-
-// module.exports = generateMarkdown
