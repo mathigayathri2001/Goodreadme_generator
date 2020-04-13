@@ -3,14 +3,14 @@ function generateMarkdown(answers, link, url, image) {
   return `
   # Project Title:
 
-  ![Badge](https://img.shields.io/static/v1?label=${answers.projecttitle}&message=projecttitle&color=success)
+  ![Badge](https://img.shields.io/static/v1?label=${answers.projecttitle}&message=projecttitle&color=blueviolet)
   
   ## *${answers.projecttitle}*
 
   # Project description:
   ### This section describe the project detail.
 
-  ## *${answers.description}*
+  ### *${answers.description}*
   
   # Table of Content
 
@@ -29,32 +29,31 @@ function generateMarkdown(answers, link, url, image) {
   
   # Installation
 
-  ## To install dependancies for readme appication, please use the following command
-  ## *${answers.installation}*
+  ### To install dependancies for readme appication, please use the following command
+  ### *${answers.installation}*
 
   # License
 
   ## LIcense require for the project
-  ![Badge](https://img.shields.io/static/v1?label=MIT&message=License&color=brightgreen)
-  ![Badge](https://img.shields.io/static/v1?label=GPL-3.0&message=License&color=blueviolet)
-  ![Badge](https://img.shields.io/static/v1?label=MPL-2.0&message=License&color=red)
-
-  ## *${answers.license}*
-  ## License link:"${link}"
+  ![Badge](https://img.shields.io/static/v1?label=${answers.license}&message=License&color=brightgreen)
+  
+  ### *${answers.license}*
+  ### License link:"${link}"
   
   # Usage
 
-  ## *${answers.usage}*
+  ### *${answers.usage}*
 
   # Test
 
-  ## *${answers.test}*
+  ### *${answers.test}*
 
   # Usercontribution
 
-  ## *${answers.usercontribution}*
+  ### *${answers.usercontribution}*
 
   # Question
+  ### If there is any question, please contact us in the follwing URL.
 
   ${url}
 
